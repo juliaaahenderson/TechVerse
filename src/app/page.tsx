@@ -365,20 +365,20 @@ export default function Home() {
                     className="flex-shrink-0 w-64 snap-start bg-white border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-md rounded-2xl p-5 flex flex-col justify-between group relative transition-all duration-300"
                   >
                     <div>
-                      {/* Image container sits directly in the white card background */}
-                      <div className="relative flex items-center justify-center h-48 mb-4">
+                      {/* Image container wrapped in Link */}
+                      <Link href={`/products/${prod.id}`} className="relative flex items-center justify-center h-48 mb-4 block group">
                         <img 
                           src={prod.image} 
                           alt={prod.name} 
                           className="max-h-full max-w-full object-contain group-hover:scale-103 transition-transform duration-500"
                         />
-                        <button 
-                          onClick={() => toggleWishlist(prod.id)}
-                          className="absolute top-0 right-0 p-1.5 bg-white/80 hover:bg-white rounded-full shadow-sm text-slate-400 hover:text-red-500 transition-colors z-10"
-                        >
-                          <Heart className={`w-4 h-4 ${wishlist.includes(prod.id) ? 'fill-red-500 text-red-500' : ''}`} />
-                        </button>
-                      </div>
+                      </Link>
+                      <button 
+                        onClick={() => toggleWishlist(prod.id)}
+                        className="absolute top-4 right-4 p-1.5 bg-white/80 hover:bg-white rounded-full shadow-sm text-slate-400 hover:text-red-500 transition-colors z-10"
+                      >
+                        <Heart className={`w-4 h-4 ${wishlist.includes(prod.id) ? 'fill-red-500 text-red-500' : ''}`} />
+                      </button>
 
                       {/* Ratings stars underneath the image */}
                       <div className="flex items-center text-amber-500 mb-1 text-[11px] font-bold">
@@ -387,7 +387,9 @@ export default function Home() {
                         <span className="text-slate-400 font-normal ml-0.5">({prod.reviews})</span>
                       </div>
 
-                      <h5 className="font-bold text-slate-900 group-hover:text-red-600 transition-colors line-clamp-1 mb-3 text-sm">{prod.name}</h5>
+                      <Link href={`/products/${prod.id}`} className="block group">
+                        <h5 className="font-bold text-slate-900 group-hover:text-red-600 transition-colors line-clamp-1 mb-3 text-sm cursor-pointer">{prod.name}</h5>
+                      </Link>
                     </div>
 
                     <div className="pt-3 border-t border-slate-100 space-y-3">

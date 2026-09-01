@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useMemo, Suspense } from 'react';
+import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
 import { PRODUCTS, Product } from '@/data/mockData';
 import { 
   Search, Heart, Star, ShoppingBag, Eye, SlidersHorizontal, Check, 
-  ArrowRight, ChevronDown, ChevronUp, Grid, List, Laptop, Phone, 
+  ArrowRight, ChevronDown, ChevronUp, Laptop, Phone, 
   Headphones, Watch, ShieldAlert
 } from 'lucide-react';
 
@@ -22,6 +22,16 @@ function ProductsContent() {
   const [priceRange, setPriceRange] = useState<number>(4000);
   const [sortBy, setSortBy] = useState<'popular' | 'price-asc' | 'price-desc'>('popular');
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+
+  // Sync category state when URL query parameter changes
+  useEffect(() => {
+    const cat = searchParams.get('cat');
+    if (cat) {
+      setSelectedCategory(cat);
+    } else {
+      setSelectedCategory('All');
+    }
+  }, [searchParams]);
 
   // Filter expand states
   const [expandBrands, setExpandBrands] = useState(true);
@@ -250,10 +260,7 @@ function ProductsContent() {
                   </select>
                 </div>
 
-                <div className="flex border border-slate-200 rounded overflow-hidden">
-                  <button className="p-1 bg-slate-50 text-slate-600 border-r border-slate-200"><Grid className="w-4 h-4" /></button>
-                  <button className="p-1 bg-white text-slate-400"><List className="w-4 h-4" /></button>
-                </div>
+
               </div>
             </div>
 

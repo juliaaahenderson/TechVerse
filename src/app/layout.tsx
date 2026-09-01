@@ -18,17 +18,27 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TechVerse | Premium E-Commerce & Bitdefender Security Hub",
   description: "Explore elite engineering hardware combined with Bitdefender's premium cybersecurity threat shield protection.",
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: [
-      { url: "/TechVerse favicon.png", sizes: "32x32", type: "image/png" },
-      { url: "/TechVerse favicon.png", sizes: "48x48", type: "image/png" },
-      { url: "/TechVerse favicon.png", sizes: "96x96", type: "image/png" },
+      { url: "/TechVerse favicon.png", sizes: "512x512", type: "image/png" },
       { url: "/TechVerse favicon.png", sizes: "192x192", type: "image/png" },
+      { url: "/TechVerse favicon.png", sizes: "96x96", type: "image/png" },
+      { url: "/TechVerse favicon.png", sizes: "48x48", type: "image/png" },
+      { url: "/TechVerse favicon.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: [
       { url: "/TechVerse favicon.png", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: "/TechVerse favicon.png",
     apple: [
+      { url: "/TechVerse favicon.png", sizes: "512x512", type: "image/png" },
       { url: "/TechVerse favicon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/TechVerse favicon.png",
+      },
     ],
   },
 };
