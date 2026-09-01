@@ -18,6 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TechVerse | Premium E-Commerce & Bitdefender Security Hub",
   description: "Explore elite engineering hardware combined with Bitdefender's premium cybersecurity threat shield protection.",
+  icons: {
+    icon: "/techverse-monogram-logo.png",
+    shortcut: "/techverse-monogram-logo.png",
+    apple: "/techverse-monogram-logo.png",
+  },
 };
 
 export default function RootLayout({
