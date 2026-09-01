@@ -19,9 +19,17 @@ export const metadata: Metadata = {
   title: "TechVerse | Premium E-Commerce & Bitdefender Security Hub",
   description: "Explore elite engineering hardware combined with Bitdefender's premium cybersecurity threat shield protection.",
   icons: {
-    icon: "/techverse-monogram-logo.png",
-    shortcut: "/techverse-monogram-logo.png",
-    apple: "/techverse-monogram-logo.png",
+    icon: [
+      { url: "/TechVerse favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/TechVerse favicon.png", sizes: "48x48", type: "image/png" },
+      { url: "/TechVerse favicon.png", sizes: "96x96", type: "image/png" },
+      { url: "/TechVerse favicon.png", sizes: "192x192", type: "image/png" },
+      { url: "/TechVerse favicon.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/TechVerse favicon.png",
+    apple: [
+      { url: "/TechVerse favicon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
